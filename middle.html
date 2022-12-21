@@ -6,22 +6,27 @@
   <link rel="stylesheet" type="text/css" href="スタイ.css">
   <script>
     function getnames(a){
+      //これまでの回答をパラメーターから取得し、今回の回答を追加する
       var query = location.search;
 var value = query.split('=');
 return decodeURIComponent(value[1])+a;
     }
+    function page(){
+      //次のページのファイル名
+      return 'third.html';
+    }//パラメーターが追加された次のページを開く
     function cute(){
 var next = getnames(',cute');
-      location.href = 'third.html?name=' +next;
+      location.href = page()+'?name=' +next;
     }function feminine(){
       var next = getnames(',feminine');
-      location.href = 'third.html?name=' +next;
+      location.href = page()+'?name=' +next;
     }function fresh(){
       var next = getnames(',fresh');
-      location.href = 'third.html?name=' +next;
+      location.href =  page()+'?name=' +next;
     }function cool(){
       var next = getnames(',cool');
-      location.href = 'third.html?name=' +next;
+      location.href =  page()+'?name='+next;
     }
   </script>
 </head>

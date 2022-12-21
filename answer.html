@@ -6,13 +6,13 @@
   <title>タイプ分けのプログラム</title>
   <script>
     //cute：橋本環奈さん　cool：黒木メイサさん　feminine：広瀬アリスさん　fresh：松岡茉優さん
-    function getnames(){
+    function getnames(){//これまでの回答を取得
       var query = location.search;
 var value = query.split('=');
 var names =decodeURIComponent(value[1]);
 return names;
     }
-    function result(){
+    function result(){//結果を抽出する
     var names = getnames();
     'use strict';
     var array = names.split(',');
@@ -22,32 +22,33 @@ return names;
   var feminine=0;
   var fresh=0;
     for (var i=0;i<array.length;i++){
-      console.log(array[i]);
       if(array[i]=='cool'){
         var cool = cool+1;
-        console.log(cool);
       }else if(array[i]=='cute'){
         var cute = cute+1;
-        console.log(cute);
       }else if(array[i]=='feminine'){
         var feminine = feminine+1;
         console.log(feminine);
       }else if(array[i]=='fresh'){
         var fresh = fresh+1;
-        console.log(fresh);
       };
     }
     var resnum = [cool,cute,feminine,fresh];
     console.log(resnum);
     var max = Math.max.apply(null,resnum);
-    var number = resnum.indexOf(max);
     var typearr =[['クールタイプ','キュートタイプ','フェミニンタイプ','フレッシュタイプ'],['cool','cute','feminine','fresh'],['黒木メイサさん','橋本環奈さん','広瀬アリスさん','松岡茉優さん']];
+    console.log(max);
+    if (max==1){
+      var number = typearr[1].indexOf(array[2]);
+      var resarr = [typearr[0][number],typearr[1][number],typearr[2][number]];
+    }else{
+    var number = resnum.indexOf(max);
     var restype =typearr[0][number];
     var resarr = [typearr[0][number],typearr[1][number],typearr[2][number]];
+    };
     console.log(resarr);
     let image = document.getElementById("image");
 				image.src = resarr[1] +'.jpg';
-    console.log(restype);
     document.getElementById('type').innerHTML= resarr[0];
     document.getElementById('human').innerHTML = resarr[2]+'が該当します';
   }

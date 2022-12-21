@@ -5,14 +5,18 @@
   <title>タイプ分けのプログラム</title>
   <link rel="stylesheet" type="text/css" href="スタイ.css">
   <script>
+    function next(){
+      //次のページのファイル名
+      return 'middle.html';
+    }//パラメーターの追加された次のページを開く
     function cute(){
-      location.href = 'middle.html?name=cute';
+      location.href = next()+'?name=cute';
     }function feminine(){
-      location.href = 'middle.html?name=feminine';
+      location.href = next()+'?name=feminine';
     }function fresh(){
-      location.href = 'middle.html?name=fresh';
+      location.href = next()+'?name=fresh';
     }function cool(){
-      location.href = 'middle.html?name=cool';
+      location.href = next()+'?name=cool';
     }
   </script>
 </head>
