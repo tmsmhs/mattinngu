@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>タイプ分けのプログラム</title>
+  <link rel="stylesheet" type="text/css" href="スタイ.css">
+  <script>
+    var query = location.search;
+var value = query.split('=');
+console.log(decodeURIComponent(value[1]));
+  </script>
+   <script>
+    function getnames(a){
+      var query = location.search;
+var value = query.split('=');
+return decodeURIComponent(value[1])+a;
+    }
+    function cute(){
+var next = getnames(',cute');
+      location.href = 'answer.html?name=' +next;
+    }function feminine(){
+      var next = getnames(',feminine');
+      location.href = 'answer.html?name=' +next;
+    }function fresh(){
+      var next = getnames(',fresh');
+      location.href = 'answer.html?name=' +next;
+    }function cool(){
+      var next = getnames(',cool');
+      location.href = 'answer.html?name=' +next;
+    }
+  </script>
+</head>
+<body>
+  <div class="header">
+    <div class="header-left">タイプ分け診断</div>
+    <div class="header-right">「女性の好み」</div>
+  </div>
+
+<div class="main">
+    
+<div class="form-title">好みの画像を選んでね</div>
+    
+<div class="form-word">画像をクリックしよう!</div>
+        
+<div class="select">
+    <a onclick="cool()" class="select-img"><img src="松下奈緒-クール.jpg" width="260" height="390" alt="なお-くーる"></a>
+    <a onclick="cute()" class="select-img"><img src="水卜麻美-キュート.jpg" width="260" height="390" alt="まみ-きゅーと"></a>
+    <br>
+    <br>
+    <br>
+    <br>
+    <a onclick="feminine()" class="select-img"><img src="白石麻衣-フェミニン.jpg" width="260" height="390" alt="まい-ふぇみにん"></a>
+    <a onclick="fresh()" class="select-img"><img src="榮倉奈々-フレッシュ.jpg" width="260" height="390" alt="なな-ふれっしゅ"></a> 
+</div>
+
+<div class="last-word">これでラスト!!</div>
+    
+</div><br><br>
+
+<div class="footer">
+    <div class="footer-left">
+      <p>人物紹介欄</p>
+      <p>左上：水卜麻美</p>
+      <p>右上：松下奈緒</p>
+      <p>左下：白石麻衣</p>
+      <p>右下：榮倉奈々</p></div>
+
+<div class="fotter-right">
+      <p>名前で選ばないでね</p></div>
+  </div>
+
+</body></html>
