@@ -1,4 +1,6 @@
 このプログラムの取扱説明書
+　正規版
+  url=https://tmsmhs.github.io/mattinngu
 　１．現段階でのプログラムの説明
 　　画像がクリックされると、それぞれの画像に対応したjavascript関数（以後、js関数という）が発現する。
   　　キュート：cute()　クール：cool()　フェミニン：feminine()　フレッシュ：fresh()
@@ -9,3 +11,8 @@
   画像はonclick="---()"の---の部分と属性が同じであればファイル名は問わない。
  ３．answerページの変更
  　typearrを変更する。
+ 
+  Beta版
+  url=https://tmsmhs.github.io/mattinngu/beta
+  正規版との違い
+  画像が毎回シャッフルされる。選ばれた選択が確実でない場合、正規版では最後の選択を使用するが、beta版では途中からやり直しとなる。
