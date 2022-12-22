@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>タイプ分けのプログラム</title>
+  <link rel="stylesheet" type="text/css" href="スタイ.css">
+  <script>
+    function getnames(a){
+      //これまでの回答をパラメーターから取得し、今回の回答を追加する
+      var query = location.search;
+var value = query.split('=');
+return decodeURIComponent(value[1])+a;
+    }
+    function page(){
+      //次のページのファイル名
+      return 'third.html';
+    }//パラメーターが追加された次のページを開く
+    function cute(){
+var next = getnames(',cute');
+      location.href = page()+'?name=' +next;
+    }function feminine(){
+      var next = getnames(',feminine');
+      location.href = page()+'?name=' +next;
+    }function fresh(){
+      var next = getnames(',fresh');
+      location.href =  page()+'?name=' +next;
+    }function cool(){
+      var next = getnames(',cool');
+      location.href =  page()+'?name='+next;
+    }
+  </script>
+    <script src="list.js"></script>
+    <script>
+      //imgのシャッフル
+      function shuffle(){
+        var list = lists();
+
+        let coolimg = document.getElementById("coolimg");
+        let coollist = list[0].length;
+        let a = Math.floor( Math.random() * coollist );
+        let recoolimg = list[0][a][1];
+          coolimg.src = 'cool/'+recoolimg;
+
+          let cuteimg = document.getElementById("cuteimg");
+          let cutelist = list[1].length;
+          let b = Math.floor( Math.random() * cutelist );
+          let recuteimg = list[1][b][1];
+          cuteimg.src = 'cute/'+recuteimg;
+
+          let freshimg = document.getElementById("freshimg");
+          let freshlist = list[2].length;
+          let c = Math.floor( Math.random() * freshlist );
+          let refreshimg = list[2][c][1];
+          freshimg.src = 'fresh/'+refreshimg;
+
+          let feminineimg = document.getElementById("feminineimg");
+          let femininelist = list[3].length;
+          let d = Math.floor( Math.random() * femininelist );
+          let refeminineimg = list[3][d][1];
+          feminineimg.src = 'feminine/'+refeminineimg;
+      }
+          </script>
+</head>
+<body onload="shuffle()">
+  <div class="header">
+    <div class="header-left">タイプ分け診断</div>
+    <div class="header-right">「女性の好み」</div>
+  </div>
+
+<div class="main">
+    
+<div class="form-title">好みの画像を選んでね</div>
+    
+<div class="form-word">画像をクリックしよう!</div>
+        
+<div class="select">
+  <a onclick="cool()" class="select-img"><img id="coolimg" width="260" height="390"></a> 
+  <a onclick="fresh()" class="select-img"><img id="freshimg" width="260" height="390"></a>
+  <br>
+  <br>
+  <br>
+  <br>
+  <a onclick="feminine()"class="select-img"><img id="feminineimg" width="260" height="390"></a>
+  <a onclick="cute()"class="select-img"><img id="cuteimg" width="260" height="390"></a>
+</div>
+
+<div class="last-word">じゃんじゃん行こう!!</div>
+    
+</div><br><br>
+
+<div class="footer">
+    <div class="footer-left">
+      <p>人物紹介欄</p>
+      <p>左上：広瀬すず</p>
+      <p>右上：新垣結衣(ガッキー)</p>
+      <p>左下：永作博美</p>
+      <p>右下：石原さとみ</p></div>
+
+<div class="fotter-right">
+      <p>名前で選ばないでね</p></div>
+  </div>
+
+</body></html>
