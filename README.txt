@@ -17,3 +17,9 @@
   url=https://tmsmhs.github.io/mattinngu/beta
   正規版との違い
   画像が毎回シャッフルされる。選ばれた選択が確実でない（それぞれの属性を一度ずつしか選んでいない）場合、正規版では最後の選択を使用するが、beta版では途中のページからやり直しとなる。
+ 
+ Beta2版
+ url=https://tmsmhs.github.io/mattinngu/beta2
+ 正規版、beta版との違い
+ list.js内に登録されている中から写真が選ばれる。
+ 結果は登録されている結果の属性にあった人の中からランダムに選出される
