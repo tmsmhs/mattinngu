@@ -51,6 +51,7 @@ var value = query.split('=');
     let rondom = Math.floor( Math.random() * maxlen );
     let imgsrc = list[number][rondom][1];
 				image.src = typearr[1][number]+'/'+imgsrc;
+        image.width="400";
     document.getElementById('type').innerHTML= typearr[0][number];
     document.getElementById('human').innerHTML = list[number][rondom][0]+'さんが該当します';
     };
@@ -70,15 +71,15 @@ var value = query.split('=');
     <a><img src="ハート.png" width="200" height="200" alt="はーと"></a></div>
 
 <div class="hart-img2">
-	<!--cssの修正が必要-->
     <a><img src="ハート.png" width="200" height="200" alt="はーと"></a></div>
     
 <div id="type" class="last-word-2">キュートタイプ</div>
     
 <div class="answer-img">
-    <a><img src="cute.jpg" width="600" height="500" alt="かんな" id="image"></a></div>
+    <a><img src="cute.jpg" id="image"></a></div>
 
 <div class="answer-word" id="human">橋本環奈さんが該当します</div>
+<br>
 </div><br><br>
 
 <div class="footer">
