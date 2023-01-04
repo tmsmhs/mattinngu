@@ -4,55 +4,33 @@
   <meta charset="utf-8">
   <title>タイプ分けのプログラム</title>
   <link rel="stylesheet" type="text/css" href="スタイ.css">
+  <script src="list.js"></script>
   <script>
     function next(){
       //次のページのファイル名
       return 'middle.html';
     }//パラメーターの追加された次のページを開く
-    function cute(){
-      location.href = next()+'?name=cute';
-    }function feminine(){
-      location.href = next()+'?name=feminine';
-    }function fresh(){
-      location.href = next()+'?name=fresh';
-    }function cool(){
-      location.href = next()+'?name=cool';
+    function clicked(type){
+      location.href = next()+'?name='+type;
     }
-  </script>
-  <script src="list.js"></script>
-  <script>
 //imgのシャッフル
-    function shuffle(){
-      var list = lists();
-        
-        let coolimg = document.getElementById("coolimg");
-        let coollist = list[0].length;
-        let a = Math.floor( Math.random() * coollist );
-        let recoolimg = list[0][a][1];
-        console.log(recoolimg);
-          coolimg.src = 'cool/'+recoolimg;
-
-          let cuteimg = document.getElementById("cuteimg");
-          let cutelist = list[1].length;
-          let b = Math.floor( Math.random() * cutelist );
-          let recuteimg = list[1][b][1];
-          console.log(recuteimg);
-          cuteimg.src = 'cute/'+recuteimg;
-
-          let freshimg = document.getElementById("freshimg");
-          let freshlist = list[2].length;
-          let c = Math.floor( Math.random() * freshlist );
-          let refreshimg = list[2][c][1];
-          console.log(refreshimg);
-          freshimg.src = 'fresh/'+refreshimg;
-
-          let feminineimg = document.getElementById("feminineimg");
-          let femininelist = list[3].length;
-          let d = Math.floor( Math.random() * femininelist );
-          let refeminineimg = list[3][d][1];
-          console.log(refeminineimg);
-          feminineimg.src = 'feminine/'+refeminineimg;
-    }
+function shuffle(){
+        var list = lists();
+        var types = [['cool','右下'],['cute','左上'],['fresh','左下'],['feminine','右上']];
+        for(let i=0;i<types.length;i++){
+          let type = types[i][0];
+        console.log(type);
+          let img = document.getElementById(type+'img');
+          let listlen = list[i][0].length;
+          let a = Math.floor( Math.random() * listlen );
+        console.log(a);
+          let reimg = list[i][a][1];
+          let rehum = list[i][a][0];
+        console.log(type+'/'+reimg);
+          img.src = type+'/'+reimg;
+          document.getElementById(type).innerText = types[i][1]+':'+rehum;
+        }
+      }
         </script>
 </head>
 <body onload="shuffle()">
@@ -68,14 +46,14 @@
 <div class="form-word">画像をクリックしよう!</div>
         
 <div class="select">
-    <a onclick="cute()"class="select-img"><img id="cuteimg" width="260" height="390"></a>
-    <a onclick="feminine()"class="select-img"><img id="feminineimg" width="260" height="390"></a>
+    <a onclick="clicked('cute')"class="select-img"><img id="cuteimg" width="260" height="390"></a>
+    <a onclick="clicked('feminine')"class="select-img"><img id="feminineimg" width="260" height="390"></a>
     <br>
     <br>
     <br>
     <br>
-    <a onclick="fresh()" class="select-img"><img id="freshimg" width="260" height="390"></a>
-    <a onclick="cool()" class="select-img"><img id="coolimg" width="260" height="390"></a> 
+    <a onclick="clicked('fresh')" class="select-img"><img id="freshimg" width="260" height="390"></a>
+    <a onclick="clicked('cool')" class="select-img"><img id="coolimg" width="260" height="390"></a> 
 </div>
 
 <div class="last-word">診断スタート!!</div>
@@ -85,10 +63,10 @@
 <div class="footer">
     <div class="footer-left">
       <p>人物紹介欄</p>
-      <p>左上：橋本環奈</p>
-      <p>右上：本田翼</p>
-      <p>左下：黒木メイサ</p>
-      <p>右下：ローラ</p></div>
+      <p id="cute">左上：橋本環奈</p>
+      <p id="feminine">右上：本田翼</p>
+      <p id="fresh">左下：黒木メイサ</p>
+      <p id="cool">右下：ローラ</p></div>
 
 <div class="fotter-right">
       <p>名前で選ばないでね</p></div>
