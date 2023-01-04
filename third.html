@@ -26,16 +26,19 @@ return decodeURIComponent(value[1])+a;
       //imgのシャッフル
       function shuffle(){
         var list = lists();
-        var types = ['cool','cute','fresh','feminine']
+        var types = [['cool','右上'],['cute','左上'],['fresh','左下'],['feminine','右下']];
         for(let i=0;i<types.length;i++){
-          let type = types[i];
+          let type = types[i][0];
+        console.log(type);
           let img = document.getElementById(type+'img');
-          let listlen = list[i].length;
+          let listlen = list[i][0].length;
           let a = Math.floor( Math.random() * listlen );
         console.log(a);
           let reimg = list[i][a][1];
+          let rehum = list[i][a][0];
         console.log(type+'/'+reimg);
           img.src = type+'/'+reimg;
+          document.getElementById(type).innerText = types[i][1]+':'+rehum;
         }
       }
           </script>
@@ -70,10 +73,10 @@ return decodeURIComponent(value[1])+a;
 <div class="footer">
     <div class="footer-left">
       <p>人物紹介欄</p>
-      <p>左上：水卜麻美</p>
-      <p>右上：松下奈緒</p>
-      <p>左下：白石麻衣</p>
-      <p>右下：榮倉奈々</p></div>
+      <p id="cute">左上：水卜麻美</p>
+      <p id="cool">右上：松下奈緒</p>
+      <p id="fresh">左下：白石麻衣</p>
+      <p id="feminine">右下：榮倉奈々</p></div>
 
 <div class="fotter-right">
       <p>名前で選ばないでね</p></div>
