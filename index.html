@@ -4,23 +4,33 @@
   <meta charset="utf-8">
   <title>タイプ分けのプログラム</title>
   <link rel="stylesheet" type="text/css" href="スタイ.css">
+  <script src="list.js"></script>
   <script>
     function next(){
       //次のページのファイル名
       return 'middle.html';
     }//パラメーターの追加された次のページを開く
-    function cute(){
-      location.href = next()+'?name=cute';
-    }function feminine(){
-      location.href = next()+'?name=feminine';
-    }function fresh(){
-      location.href = next()+'?name=fresh';
-    }function cool(){
-      location.href = next()+'?name=cool';
+    function clicked(type){
+      location.href = next()+'?name='+type;
     }
-  </script>
+//imgのシャッフル
+function shuffle(){
+        var list = lists();
+        var types = ['cool','cute','fresh','feminine']
+        for(let i=0;i<types.length;i++){
+          let type = types[i];
+          let img = document.getElementById(type+'img');
+          let listlen = list[i].length;
+          let a = Math.floor( Math.random() * listlen );
+        console.log(a);
+          let reimg = list[i][a][1];
+        console.log(type+'/'+reimg);
+          img.src = type+'/'+reimg;
+        }
+      }
+        </script>
 </head>
-<body>
+<body onload="shuffle()">
   <div class="header">
     <div class="header-left">タイプ分け診断</div>
     <div class="header-right">「女性の好み」</div>
@@ -33,14 +43,14 @@
 <div class="form-word">画像をクリックしよう!</div>
         
 <div class="select">
-    <a onclick="cute()" class="select-img"><img src="橋本環奈-キュート.jpg" width="260" height="390" alt="かんな"></a>
-    <a onclick="feminine()" class="select-img"><img src="広瀬アリス-フェミニン.jpg" width="260" height="390" alt="ありす"></a>
+    <a onclick="clicked('cute')"class="select-img"><img id="cuteimg" width="260" height="390"></a>
+    <a onclick="clicked('feminine')"class="select-img"><img id="feminineimg" width="260" height="390"></a>
     <br>
     <br>
     <br>
     <br>
-    <a onclick="fresh()" class="select-img"><img src="松岡茉優-フレッシュ.jpg" width="260" height="390" alt="みゆう"></a>
-    <a onclick="cool()" class="select-img"><img src="黒木メイサ-クール.jpg" width="260" height="390" alt="めいさ"></a> 
+    <a onclick="clicked('fresh')" class="select-img"><img id="freshimg" width="260" height="390"></a>
+    <a onclick="clicked('cool')" class="select-img"><img id="coolimg" width="260" height="390"></a> 
 </div>
 
 <div class="last-word">診断スタート!!</div>

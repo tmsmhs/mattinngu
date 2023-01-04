@@ -24,16 +24,16 @@ return names;
   var fresh=0;
   var typearr =[['クールタイプ','キュートタイプ','フレッシュタイプ','フェミニンタイプ'],['cool','cute','fresh','feminine']];
   for (var i=0;i<array.length;i++){
-      if(array[i]=='cool'){
-        var cool = cool+1;
-      }else if(array[i]=='cute'){
-        var cute = cute+1;
-      }else if(array[i]=='feminine'){
-        var feminine = feminine+1;
-        console.log(feminine);
-      }else if(array[i]=='fresh'){
-        var fresh = fresh+1;
-      };
+    switch(array[i]){
+      case 'cool':var cool = cool+1;
+      break
+      case 'cute':var cute = cute+1;
+      break
+      case 'feminine':var feminine = feminine+1;
+      break
+      case 'fresh':var fresh = fresh+1;
+      break
+    }
     }
     var resnum = [cool,cute,fresh,feminine];
     console.log(resnum);
