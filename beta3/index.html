@@ -1,1 +1,78 @@
-aaa
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>タイプ分けのプログラム</title>
+  <link rel="stylesheet" type="text/css" href="スタイ.css">
+  <script src="judge.js"></script>
+  <script src="list.js"></script>
+  <script>
+    function clicked(type){
+      location.href = page(type);
+    }
+      //imgのシャッフル
+      function shuffle(){
+        var list = lists();
+        var place =['左上','右上','左下','右下'];
+        var arr =['cool','cute','fresh','feminine'];
+        var li =arr.concat();
+        for(let t=0;t<li.length;t++){
+          let rondom = Math.floor( Math.random() * arr.length );
+          let type = arr[rondom];
+          let listlen = list[rondom][0].length;
+          let a = Math.floor( Math.random() * listlen );
+          let num = li.indexOf(type);
+          let reimg = list[num][a][1];
+          let id = t+1;
+          let img = document.getElementById('image'+id);
+          img.src = type+'/'+reimg;
+          let rehum = list[num][a][0];
+          document.getElementById('p'+id).innerText = place[t]+':'+rehum;
+          let onc = document.getElementById('a'+id);
+          onc.id=type;
+          arr.splice(rondom,1);
+          console.log(type)
+        }
+      }
+          </script>
+</head>
+<body onload="shuffle()">
+  <div class="header">
+    <div class="header-left">タイプ分け診断</div>
+    <div class="header-right">「女性の好み」</div>
+  </div>
+
+<div class="main">
+    
+<div class="form-title">好みの画像を選んでね</div>
+    
+<div class="form-word">画像をクリックしよう!</div>
+        
+<div class="select">
+  <a id="a1" onclick="clicked(this.id)" class="select-img"><img id="image1" width="260" height="390"></a> 
+  <a id="a2" onclick="clicked(this.id)" class="select-img"><img id="image2" width="260" height="390"></a>
+  <br>
+  <br>
+  <br>
+  <br>
+  <a id="a3" onclick="clicked(this.id)" class="select-img"><img id="image3" width="260" height="390"></a>
+  <a id="a4" onclick="clicked(this.id)" class="select-img"><img id="image4" width="260" height="390"></a>
+</div>
+
+<div class="last-word">じゃんじゃん行こう!!</div>
+    
+</div><br><br>
+
+<div class="footer">
+    <div class="footer-left">
+      <p>人物紹介欄</p>
+      <p id="p1">左上：広瀬すず</p>
+      <p id="p2">右上：新垣結衣(ガッキー)</p>
+      <p id="p3">左下：永作博美</p>
+      <p id="p4">右下：石原さとみ</p></div>
+
+<div class="fotter-right">
+      <p>名前で選ばないでね</p></div>
+  </div>
+
+</body></html>
