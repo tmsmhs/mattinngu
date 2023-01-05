@@ -7,19 +7,19 @@
   <script src="judge.js"></script>
   <script src="list.js"></script>
   <script>
-    function clicked(type){
-      location.href = page(type);
-    }
+    
       //imgのシャッフル
+      var placeb =['左上','右上','左下','右下'];
+        var arrb =['cool','cute','fresh','feminine'];
       function shuffle(){
         var list = lists();
-        var place =['左上','右上','左下','右下'];
-        var arr =['cool','cute','fresh','feminine'];
-        var li =arr.concat();
+        var place =placeb.concat();
+        var arr =arrb.concat();
+        var li =arrb.concat();
         for(let t=0;t<li.length;t++){
           let rondom = Math.floor( Math.random() * arr.length );
           let type = arr[rondom];
-          let listlen = list[rondom][0].length;
+          let listlen = list[rondom][0].length+1;
           let a = Math.floor( Math.random() * listlen );
           let num = li.indexOf(type);
           let reimg = list[num][a][1];
@@ -31,7 +31,8 @@
           let onc = document.getElementById('a'+id);
           onc.id=type;
           arr.splice(rondom,1);
-          console.log(type)
+          restoration.push(type);
+          console.log(type);
         }
       }
           </script>

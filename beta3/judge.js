@@ -1,8 +1,7 @@
+var answers =[];
+var restoration=[];
 function judges(test){//結果をジャッジする
-    var query = location.search;
-    var value = query.split('=');
-    var names =decodeURIComponent(value[1]);
-    var array = names.split(',');
+    var array = answers;
     array.push(test);
     console.log(array);
     if(array.length<3){
@@ -36,23 +35,21 @@ function judges(test){//結果をジャッジする
     }
 }
   }
-
-  function page(type){
+  function clicked(type){
     let judge = judges(type);
     if(judge=='true'){
-        var query = location.search;
-        var value = query.split('=');
-          return 'answer.html?name=' +decodeURIComponent(value[1])+','+type;
+        location.href ='answer.html?name=' +answers;
     }else{
-          var query = location.search;
-        var value = query.split('=');
-        var first =decodeURIComponent(value[1]);
-        if(first=='undefined'){
-            return 'index.html?name='+type;
-        }else{
-      return 'index.html?name=' +decodeURIComponent(value[1])+','+type;
+        //idのリセット
+        for(let i=0;i<arrb.length;i++){
+        let id=i+1;
+        let onc = document.getElementById(restoration[i]);
+        onc.id='a'+id;
         }
+        restoration.splice(0,arrb.length);
+        shuffle();
     }
   }
+
 
   
