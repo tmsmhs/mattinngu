@@ -28,7 +28,8 @@
  
  Beta3（最新）版
  url=https://tmsmhs.github.io/mattinngu/beta3
- javascriptの単純化、htmlファイルの削減（4ファイル→2ファイル　減った処理はjavascriptが代行）、軽量化
+ javascriptの単純化、htmlファイルの削減（4ファイル→2ファイル　減った処理はjavascriptが代行）、
+ 軽量化、Ajaxモドキの実装
  
  ーーー人の登録方法（beta2以降に対応）ーーー
  １．属性のフォルダに画像をアップロードする　例）キュート：cuteフォルダ内に画像をアップロード
