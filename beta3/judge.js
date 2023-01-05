@@ -1,8 +1,9 @@
-function judges(){//結果をジャッジする
+function judges(test){//結果をジャッジする
     var query = location.search;
     var value = query.split('=');
     var names =decodeURIComponent(value[1]);
     var array = names.split(',');
+    array.push(test);
     console.log(array);
     if(array.length<3){
         return 'false';
@@ -37,7 +38,7 @@ function judges(){//結果をジャッジする
   }
 
   function page(type){
-    let judge = judges();
+    let judge = judges(type);
     if(judge=='true'){
         var query = location.search;
         var value = query.split('=');
