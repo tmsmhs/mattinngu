@@ -7,11 +7,11 @@
   <script src="judge.js"></script>
   <script src="list.js"></script>
   <script>
-    
       //imgのシャッフル
       var placeb =['左上','右上','左下','右下'];
         var arrb =['cool','cute','fresh','feminine'];
       function shuffle(){
+        document.getElementById("js").style.display ="none";
         var list = lists();
         var place =placeb.concat();
         var arr =arrb.concat();
@@ -44,7 +44,7 @@
   </div>
 
 <div class="main">
-    
+    <p id="js" style="color:red;">javascriptを有効にしてください</p>
 <div class="form-title">好みの画像を選んでね</div>
     
 <div class="form-word">画像をクリックしよう!</div>
