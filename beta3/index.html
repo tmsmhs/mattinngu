@@ -6,36 +6,6 @@
   <link rel="stylesheet" type="text/css" href="スタイ.css">
   <script src="judge.js"></script>
   <script src="list.js"></script>
-  <script>
-      //imgのシャッフル
-      var placeb =['左上','右上','左下','右下'];
-        var arrb =['cool','cute','fresh','feminine'];
-      function shuffle(){
-        document.getElementById("js").style.display ="none";
-        var list = lists();
-        var place =placeb.concat();
-        var arr =arrb.concat();
-        var li =arrb.concat();
-        for(let t=0;t<li.length;t++){
-          let rondom = Math.floor( Math.random() * arr.length );
-          let type = arr[rondom];
-          let listlen = list[rondom][0].length+1;
-          let a = Math.floor( Math.random() * listlen );
-          let num = li.indexOf(type);
-          let reimg = list[num][a][1];
-          let id = t+1;
-          let img = document.getElementById('image'+id);
-          img.src = type+'/'+reimg;
-          let rehum = list[num][a][0];
-          document.getElementById('p'+id).innerText = place[t]+':'+rehum;
-          let onc = document.getElementById('a'+id);
-          onc.id=type;
-          arr.splice(rondom,1);
-          restoration.push(type);
-          console.log(type);
-        }
-      }
-          </script>
 </head>
 <body onload="shuffle()">
   <div class="header">
@@ -67,10 +37,10 @@
 <div class="footer">
     <div class="footer-left">
       <p>人物紹介欄</p>
-      <p id="p1">左上：広瀬すず</p>
-      <p id="p2">右上：新垣結衣(ガッキー)</p>
-      <p id="p3">左下：永作博美</p>
-      <p id="p4">右下：石原さとみ</p></div>
+      <p id="p1">javascriptが無効、またはエラーです</p>
+      <p id="p2"></p>
+      <p id="p3"></p>
+      <p id="p4"></p></div>
 
 <div class="fotter-right">
       <p>名前で選ばないでね</p></div>
