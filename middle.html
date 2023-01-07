@@ -4,7 +4,6 @@
   <meta charset="utf-8">
   <title>タイプ分けのプログラム</title>
   <link rel="stylesheet" type="text/css" href="スタイ.css">
-  <script src="list.js"></script>
   <script>
     function getnames(a){
       //これまでの回答をパラメーターから取得し、今回の回答を追加する
@@ -16,31 +15,22 @@ return decodeURIComponent(value[1])+a;
       //次のページのファイル名
       return 'third.html';
     }//パラメーターが追加された次のページを開く
-    function clicked(type){
-      var next = getnames(','+type);
+    function cute(){
+var next = getnames(',cute');
       location.href = page()+'?name=' +next;
+    }function feminine(){
+      var next = getnames(',feminine');
+      location.href = page()+'?name=' +next;
+    }function fresh(){
+      var next = getnames(',fresh');
+      location.href =  page()+'?name=' +next;
+    }function cool(){
+      var next = getnames(',cool');
+      location.href =  page()+'?name='+next;
     }
-      //imgのシャッフル
-      function shuffle(){
-        var list = lists();
-        var types = [['cool','左上'],['cute','右下'],['fresh','右上'],['feminine','左下']];
-        for(let i=0;i<types.length;i++){
-          let type = types[i][0];
-        console.log(type);
-          let img = document.getElementById(type+'img');
-          let listlen = list[i][0].length;
-          let a = Math.floor( Math.random() * listlen );
-        console.log(a);
-          let reimg = list[i][a][1];
-          let rehum = list[i][a][0];
-        console.log(type+'/'+reimg);
-          img.src = type+'/'+reimg;
-          document.getElementById(type).innerText = types[i][1]+':'+rehum;
-        }
-      }
-          </script>
+  </script>
 </head>
-<body onload="shuffle()">
+<body>
   <div class="header">
     <div class="header-left">タイプ分け診断</div>
     <div class="header-right">「女性の好み」</div>
@@ -53,14 +43,14 @@ return decodeURIComponent(value[1])+a;
 <div class="form-word">画像をクリックしよう!</div>
         
 <div class="select">
-  <a onclick="clicked('cool')" class="select-img"><img id="coolimg" width="260" height="390"></a> 
-  <a onclick="clicked('fresh')" class="select-img"><img id="freshimg" width="260" height="390"></a>
-  <br>
-  <br>
-  <br>
-  <br>
-  <a onclick="clicked('feminine')"class="select-img"><img id="feminineimg" width="260" height="390"></a>
-  <a onclick="clicked('cute')"class="select-img"><img id="cuteimg" width="260" height="390"></a>
+    <a onclick="feminine()" class="select-img"><img src="石原さとみ-フェミニン.jpg" width="260" height="390" alt="さとみ"></a>
+    <a onclick="cool()" class="select-img"><img src="ガッキー-クール.jpg" width="260" height="390" alt="ガッキー"></a>
+    <br>
+    <br>
+    <br>
+    <br>
+    <a onclick="fresh()" class="select-img"><img src="永作博美-フレッシュ.jpg" width="260" height="390" alt="はくみ"></a>
+    <a onclick="cute()" class="select-img"><img src="広瀬すず-キュート.jpg" width="260" height="390" alt="すず"></a> 
 </div>
 
 <div class="last-word">じゃんじゃん行こう!!</div>
@@ -70,10 +60,10 @@ return decodeURIComponent(value[1])+a;
 <div class="footer">
     <div class="footer-left">
       <p>人物紹介欄</p>
-      <p id="cool">左上：広瀬すず</p>
-      <p id="fresh">右上：新垣結衣(ガッキー)</p>
-      <p id="feminine">左下：永作博美</p>
-      <p id="cute">右下：石原さとみ</p></div>
+      <p>左上：広瀬すず</p>
+      <p>右上：新垣結衣(ガッキー)</p>
+      <p>左下：永作博美</p>
+      <p>右下：石原さとみ</p></div>
 
 <div class="fotter-right">
       <p>名前で選ばないでね</p></div>

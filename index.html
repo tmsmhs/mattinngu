@@ -4,43 +4,56 @@
   <meta charset="utf-8">
   <title>タイプ分けのプログラム</title>
   <link rel="stylesheet" type="text/css" href="スタイ.css">
-  <script src="judge.js"></script><!--スクリプト読み込み-->
-  <script src="list.js"></script><!--スクリプト読み込み-->
+  <script>
+    function next(){
+      //次のページのファイル名
+      return 'middle.html';
+    }//パラメーターの追加された次のページを開く
+    function cute(){
+      location.href = next()+'?name=cute';
+    }function feminine(){
+      location.href = next()+'?name=feminine';
+    }function fresh(){
+      location.href = next()+'?name=fresh';
+    }function cool(){
+      location.href = next()+'?name=cool';
+    }
+  </script>
 </head>
-<body onload="shuffle()">
+<body>
   <div class="header">
     <div class="header-left">タイプ分け診断</div>
     <div class="header-right">「女性の好み」</div>
   </div>
 
 <div class="main">
-    <p id="js" style="color:red;">javascriptを有効にしてください</p>
+    
 <div class="form-title">好みの画像を選んでね</div>
     
 <div class="form-word">画像をクリックしよう!</div>
         
 <div class="select">
-  <a id="a1" onclick="clicked(this.id)" class="select-img"><img id="image1" width="260" height="390"></a> 
-  <a id="a2" onclick="clicked(this.id)" class="select-img"><img id="image2" width="260" height="390"></a>
-  <br>
-  <br>
-  <br>
-  <br>
-  <a id="a3" onclick="clicked(this.id)" class="select-img"><img id="image3" width="260" height="390"></a>
-  <a id="a4" onclick="clicked(this.id)" class="select-img"><img id="image4" width="260" height="390"></a>
+    <a onclick="cute()" class="select-img"><img src="橋本環奈-キュート.jpg" width="260" height="390" alt="かんな"></a>
+    <a onclick="feminine()" class="select-img"><img src="広瀬アリス-フェミニン.jpg" width="260" height="390" alt="ありす"></a>
+    <br>
+    <br>
+    <br>
+    <br>
+    <a onclick="fresh()" class="select-img"><img src="松岡茉優-フレッシュ.jpg" width="260" height="390" alt="みゆう"></a>
+    <a onclick="cool()" class="select-img"><img src="黒木メイサ-クール.jpg" width="260" height="390" alt="めいさ"></a> 
 </div>
 
-<div class="last-word">じゃんじゃん行こう!!</div>
+<div class="last-word">診断スタート!!</div>
     
 </div><br><br>
 
 <div class="footer">
     <div class="footer-left">
       <p>人物紹介欄</p>
-      <p id="p1">javascriptが無効、またはエラーです</p>
-      <p id="p2"></p>
-      <p id="p3"></p>
-      <p id="p4"></p></div>
+      <p>左上：橋本環奈</p>
+      <p>右上：本田翼</p>
+      <p>左下：黒木メイサ</p>
+      <p>右下：ローラ</p></div>
 
 <div class="fotter-right">
       <p>名前で選ばないでね</p></div>
