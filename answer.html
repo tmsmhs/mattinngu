@@ -6,14 +6,13 @@
   <title>タイプ分けのプログラム</title>
   <script src="list.js"></script>
   <script>
-    //cute：橋本環奈さん　cool：黒木メイサさん　feminine：広瀬アリスさん　fresh：松岡茉優さん
-    function getnames(){//これまでの回答を取得
+    function getnames(){//**これまでの回答を取得。やり方はわからん*/
       var query = location.search;
 var value = query.split('=');
 var names =decodeURIComponent(value[1]);
 return names;
     }
-    function result(){//結果を抽出する
+    function result(){//**結果を抽出する。やってることはjudge()と同じ*/
     var names = getnames();
     'use strict';
     var array = names.split(',');
@@ -38,14 +37,8 @@ return names;
     var resnum = [cool,cute,fresh,feminine];
     console.log(resnum);
     var max = Math.max.apply(null,resnum);
-    console.log(max);
-    if (max==1){
-      var query = location.search;
-var value = query.split('=');
-      location.href = 'middle.html?name=' +decodeURIComponent(value[1]);
-    }else{
     var number = resnum.indexOf(max);
-    let list = lists();//type=typearr[1],num=number
+    let list = lists();
     let image = document.getElementById("image");
     let maxlen = list[number].length;
     let rondom = Math.floor( Math.random() * maxlen );
@@ -55,7 +48,6 @@ var value = query.split('=');
     document.getElementById('type').innerHTML= typearr[0][number];
     document.getElementById('human').innerHTML = list[number][rondom][0]+'さんが該当します';
     };
-  }
 </script>
   <link rel="stylesheet" type="text/css" href="スタイ.css">
 </head>
