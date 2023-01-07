@@ -6,13 +6,13 @@
   <title>タイプ分けのプログラム</title>
   <script src="list.js"></script>
   <script>
-    function getnames(){//これまでの回答を取得
+    function getnames(){//**これまでの回答を取得。やり方はわからん*/
       var query = location.search;
 var value = query.split('=');
 var names =decodeURIComponent(value[1]);
 return names;
     }
-    function result(){//結果を抽出する
+    function result(){//**結果を抽出する。やってることはjudge()と同じ*/
     var names = getnames();
     'use strict';
     var array = names.split(',');
@@ -38,7 +38,7 @@ return names;
     console.log(resnum);
     var max = Math.max.apply(null,resnum);
     var number = resnum.indexOf(max);
-    let list = lists();//type=typearr[1],num=number
+    let list = lists();
     let image = document.getElementById("image");
     let maxlen = list[number].length;
     let rondom = Math.floor( Math.random() * maxlen );
