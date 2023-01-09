@@ -39,7 +39,7 @@ function judges(test){//**answerページに進めるかの認証 */
     let judge = judges(type);//**answerページに進めるかの認証(関数呼び出し) */
     if(judge=='true'){//**次に進む */
         location.href ='answer.html?name=' +answers;//**答えの格納された配列を加えてanswerページを読み込む */
-        answers.splice(0,answers.length);//**答えの削除 */
+        array.splice(0,array.length);//**答えの削除 */
     }else{
         //idのリセット
         for(let i=0;i<arrb.length;i++){//**もう一度選ぶ */
@@ -61,9 +61,9 @@ function shuffle(){    //**imgのシャッフル*/
   for(let t=0;t<li.length;t++){
     let rondom = Math.floor( Math.random() * arr.length );//**乱数発生*/
     let type = arr[rondom];//**タイプを選択*/
-    let listlen = list[rondom][0].length+1;//**選択されたタイプに登録されている人数を取得*/
-    let a = Math.floor( Math.random() * listlen );//**乱数発生*/
     let num = li.indexOf(type);//**選択されたタイプの順番を取得*/
+    let listlen = list[num].length;//**選択されたタイプに登録されている人数を取得*/
+    let a = Math.floor( Math.random() * listlen );//**乱数発生*/
     let reimg = list[num][a][1];//**写真を取得*/
     let id = t+1;
     let img = document.getElementById('image'+id);//**imageタグを取得*/
