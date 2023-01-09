@@ -5,7 +5,7 @@ var placeb =['左上','右上','左下','右下'];
 var arrb =['cool','cute','fresh','feminine'];
 function judges(test){//**answerページに進めるかの認証 */
     var array = answers;//**今までに選ばれたタイプを取得 */
-    array.push(test);//**今回選ばれたタイプを上に加える */
+    array.push(test);//**今回選ばれたタイプを最後に加える */
     console.log(array);//**デバッグ用 */
     if(array.length<3){//**累計3回以上選択していない */
         return 'false';//**もう一度選ぶ */
@@ -29,7 +29,7 @@ function judges(test){//**answerページに進めるかの認証 */
     var resnum = [cool,cute,fresh,feminine];//**集計 */
     var max = Math.max.apply(null,resnum);//**一番多いタイプを取得 */
     if(max<2){
-        return 'false';//**最も多いタイプが1回ずつしか選ばれていない */
+        return 'false';//**最も多いタイプが1回しか選ばれていない */
     }else{
         return 'true';//**answerページへ */
     }
@@ -39,6 +39,7 @@ function judges(test){//**answerページに進めるかの認証 */
     let judge = judges(type);//**answerページに進めるかの認証(関数呼び出し) */
     if(judge=='true'){//**次に進む */
         location.href ='answer.html?name=' +answers;//**答えの格納された配列を加えてanswerページを読み込む */
+        answers.splice(0,answers.length);//**答えの削除 */
     }else{
         //idのリセット
         for(let i=0;i<arrb.length;i++){//**もう一度選ぶ */
