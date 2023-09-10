@@ -62,6 +62,9 @@ li {
 .select {
     padding: 50px;
 }
+.select a{
+  cursor:pointer;
+}
 
 .select-img{
     padding: 50px;
